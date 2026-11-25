@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anjani Kavya — Full-Stack &amp; AI Projects</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf7f2;--sf:#fff;--tx:#1b1a17;--mu:#6a665d;--ln:#e8e2d6;--ac:#ff5a36;--ac2:#ffb703;--soft:#fff1ea;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12110f;--sf:#1b1a17;--tx:#f4efe6;--mu:#a49e92;--ln:#2e2c27;--ac:#ff7a59;--ac2:#ffc83d;--soft:#2a1d18;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12110f;--sf:#1b1a17;--tx:#f4efe6;--mu:#a49e92;--ln:#2e2c27;--ac:#ff7a59;--ac2:#ffc83d;--soft:#2a1d18;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+h1,h2,h3,.big{font-family:Fraunces,Georgia,"Times New Roman",serif;margin:0;line-height:1.1;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+#bar{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;width:0;background:var(--ac);z-index:13}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--bg);border-bottom:1px solid var(--ln)}
+.hd{display:flex;align-items:center;gap:14px;height:64px}
+.logo{font:700 20px Fraunces,Georgia,serif}.logo i{color:var(--ac);font-style:normal}
+nav{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+nav a{padding:6px 12px;font-size:14px;color:var(--mu);border-radius:8px;white-space:nowrap;transition:.2s}
+nav a:hover,nav a.on{color:var(--tx);background:var(--soft)}
+.ib{border:1px solid var(--ln);background:var(--sf);color:var(--tx);width:38px;height:38px;border-radius:10px;cursor:pointer;font-size:16px;flex:none}
+.ib:hover{border-color:var(--ac)}
+section{padding:72px 0 0}
+.tag{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);font-weight:600;margin-bottom:10px}
+h2{font-size:clamp(28px,4vw,42px);margin-bottom:26px}
+.hero{padding:56px 0 0}
+.hero h1{font-size:clamp(40px,7vw,76px);max-width:820px}
+.hero h1 em{font-style:italic;color:var(--ac)}
+.lead{max-width:600px;color:var(--mu);margin:20px 0 26px;font-size:17.5px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:12px;border:1.5px solid var(--tx);background:transparent;color:var(--tx);font:600 15px Inter,sans-serif;cursor:pointer;transition:.2s}
+.btn:hover{transform:translateY(-2px);box-shadow:4px 4px 0 var(--tx)}
+.btn.p{background:var(--ac);border-color:var(--ac);color:#fff}.btn.p:hover{box-shadow:4px 4px 0 var(--tx)}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.facts span{font-size:13.5px;border:1px solid var(--ln);background:var(--sf);padding:6px 14px;border-radius:99px;color:var(--mu)}
+.facts b{color:var(--tx)}
+.feat{display:grid;grid-template-columns:300px 1fr;background:var(--sf);border:1px solid var(--ln);border-radius:22px;overflow:hidden;margin-bottom:20px;transition:.25s}
+.feat:hover{transform:translateY(-4px);box-shadow:8px 8px 0 var(--tx);border-color:var(--tx)}
+.met{background:linear-gradient(150deg,var(--ac),var(--ac2));color:#1b1a17;padding:26px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;position:relative}
+.met small{font-weight:600;font-size:12.5px;letter-spacing:.12em}
+.met .big{font-size:clamp(30px,4vw,40px);font-weight:700}
+.met p{margin:6px 0 0;font-size:14.5px;line-height:1.4}
+.bd{padding:26px;display:flex;flex-direction:column;gap:12px}
+.bd h3{font-size:25px}.bd>p{margin:0;color:var(--mu)}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-size:12.5px;padding:4px 11px;border-radius:99px;background:var(--soft);border:1px solid var(--ln)}
+details{font-size:14.5px;color:var(--mu)}summary{cursor:pointer;color:var(--ac);font-weight:600;list-style:none;width:max-content}summary::-webkit-details-marker{display:none}
+summary::after{content:" +"}details[open] summary::after{content:" −"}
+details ul{margin:10px 0 0;padding-left:18px}details li{margin-bottom:6px}
+.lk{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+.lk a{font-size:13.5px;font-weight:600;padding:6px 14px;border-radius:10px;border:1.5px solid var(--tx);transition:.2s}.lk a:hover{background:var(--tx);color:var(--bg)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:12px;transition:.25s}
+.card:hover{transform:translateY(-4px);box-shadow:6px 6px 0 var(--tx);border-color:var(--tx)}
+.card .k{font:700 26px Fraunces,Georgia,serif;color:var(--ac)}
+.card h3{font-size:20px}.card p{margin:0;color:var(--mu);font-size:15px}
+.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.box{background:var(--sf);border:1px solid var(--ln);border-radius:20px;padding:22px}
+.box h3{font-size:18px;margin-bottom:12px}
+.list{margin:0;padding:0;list-style:none}.list li{padding:9px 0;border-bottom:1px solid var(--ln);color:var(--mu);font-size:15px}.list li:last-child{border:0}.list b{color:var(--tx)}
+.cta{background:var(--tx);color:var(--bg);border-radius:26px;padding:48px 28px;text-align:center}
+.cta h2{margin-bottom:10px}.cta p{max-width:470px;margin:0 auto 24px;opacity:.75}
+.cta .btns{justify-content:center}.cta .btn{border-color:var(--bg);color:var(--bg)}.cta .btn:hover{box-shadow:4px 4px 0 var(--ac)}.cta .btn.p{border-color:var(--ac);color:#fff}
+footer{padding:44px 0 30px;text-align:center;color:var(--mu);font-size:14px}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--tx);color:var(--bg);padding:10px 18px;border-radius:12px;font-size:14px;opacity:0;pointer-events:none;transition:.3s;z-index:20}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}.js .rv.in{opacity:1;transform:none}
+@media(max-width:760px){.feat{grid-template-columns:1fr}.met{gap:14px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<header><div class="wrap hd">
+<a href="#top" class="logo">Anjani<i>.</i></a>
+<nav id="nav"><a href="#projects">Projects</a><a href="#more">More work</a><a href="#skills">Skills</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+<button class="ib" id="tg" aria-label="Toggle light or dark theme">☾</button>
+</div></header>
+
+<main class="wrap" id="top">
+<div class="hero">
+<div class="tag">Anjani Kavya · Computer Science · Woxsen University</div>
+<h1>I build <em>full-stack</em> products with AI inside.</h1>
+<p class="lead">Live web apps with secure FastAPI and Node.js backends, models that are measured against baselines, and dashboards people can actually use.</p>
+<div class="btns"><a class="btn p" href="#projects">See my projects ↓</a><a class="btn" href="https://github.com/kav-26" target="_blank" rel="noopener">GitHub</a><a class="btn" href="https://linkedin.com/in/anjani-kavya-9692a5286" target="_blank" rel="noopener">LinkedIn</a></div>
+<div class="facts"><span><b>4</b> live demos</span><span><b>8</b> projects</span><span>CGPA <b>9.02</b></span><span>Python · React · FastAPI · Node.js</span></div>
+</div>
+
+<section id="projects"><div class="tag">Featured · full-stack</div><h2>Apps I built end to end</h2><div id="ft"></div></section>
+<section id="more"><div class="tag">More work</div><h2>AI, data &amp; research</h2><div class="grid" id="mg"></div></section>
+
+<section id="skills"><div class="tag">Skills</div><h2>What I work with</h2><div class="sk" id="sg"></div></section>
+
+<section id="about"><div class="tag">About</div><h2>Education &amp; achievements</h2>
+<div class="sk">
+<div class="box rv"><h3>Education</h3><ul class="list"><li><b>B.Tech, Computer Science</b><br>Woxsen University · 2023–2027</li><li>CGPA <b>9.02</b> / 10</li></ul></div>
+<div class="box rv"><h3>Hackathons</h3><ul class="list"><li><b>Agentathon 2025</b> — Agentic AI Hackathon, GDG Hyderabad</li><li><b>Udhgam Hackathon</b> — Woxsen University</li></ul></div>
+<div class="box rv"><h3>Certifications</h3><ul class="list"><li><b>Python for Everybody</b> — Coursera, University of Michigan</li><li><b>Introduction to Machine Learning</b> — Coursera</li><li><b>Full Stack Development</b> — Apna College</li><li><b>Internet Crimes and Cybersecurity</b> — NPTEL</li></ul></div>
+</div></section>
+
+<section id="contact"><div class="cta rv"><h2>Let’s build something together</h2><p>I’m looking for backend and full-stack roles where I can ship real products. Email is the quickest way to reach me.</p>
+<div class="btns"><a class="btn p" href="mailto:kavyamyd@gmail.com">kavyamyd@gmail.com</a><button class="btn" id="cp" type="button">Copy email</button><a class="btn" href="https://linkedin.com/in/anjani-kavya-9692a5286" target="_blank" rel="noopener">LinkedIn</a></div></div></section>
+</main>
+<footer>© <span id="yr"></span> Anjani Kavya</footer>
+<div id="toast" role="status"></div>
+
+<script>
+document.documentElement.classList.add("js");
+var $=function(s){return document.querySelector(s)},root=document.documentElement;
+try{var th=localStorage.getItem("th2");if(th)root.dataset.theme=th}catch(e){}
+function cur(){return root.dataset.theme||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light")}
+function icon(){$("#tg").textContent=cur()==="dark"?"☀":"☾"}icon();
+$("#tg").onclick=function(){var v=cur()==="dark"?"light":"dark";root.dataset.theme=v;try{localStorage.setItem("th2",v)}catch(e){}icon()};
+function toast(m){var t=$("#toast");t.textContent=m;t.classList.add("on");setTimeout(function(){t.classList.remove("on")},1800)}
+$("#cp").onclick=function(){try{navigator.clipboard.writeText("kavyamyd@gmail.com").then(function(){toast("Email copied")},function(){toast("Press and hold the email to copy")})}catch(e){toast("Press and hold the email to copy")}};
+$("#yr").textContent=new Date().getFullYear();
+
+function chips(s){return '<div class="chips">'+s.split(",").map(function(x){return '<span class="chip">'+x+'</span>'}).join("")+'</div>'}
+function det(b){return '<details><summary>Highlights</summary><ul>'+b.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul></details>'}
+function lks(l){return l.length?'<div class="lk">'+l.map(function(x){return '<a href="'+x[1]+'" target="_blank" rel="noopener">'+x[0]+' ↗</a>'}).join("")+'</div>':''}
+
+/* featured: full-stack first */
+var F=[
+{n:"01",big:"85.6% → 95.6%",m:"accuracy over a rule-based baseline; threat recall 0.54 → 0.93",t:"Trust Web of Machines",d:"A Zero Trust platform where every machine-to-machine request is verified, scored 0–100 by AI, then allowed, restricted or denied.",
+s:"React,FastAPI,Scikit-learn,Random Forest,JWT,bcrypt,Docker",b:["8-stage pipeline: JWT identity check, Random Forest trust score, then an allow / restrict / deny decision.","FastAPI backend with two security layers: JWT machine identity and a bcrypt-secured admin login with 8-hour sessions.","5-page React dashboard with a live attack simulation, deployed with Docker on Render and Vercel."],
+l:[["Live demo","https://trust-web-of-machines.vercel.app/"],["GitHub","https://github.com/kav-26/trust-web-of-machines"]]},
+{n:"02",big:"66% → 98%",m:"skill recall after error analysis; gap-status accuracy 85% → 96%",t:"Course-to-Career Gap Analyzer",d:"Reads course syllabi and a job posting, scores job readiness from 0 to 100, and ranks projects to close each skill gap.",
+s:"React,FastAPI,Gemini API,Pydantic,SQLAlchemy,PostgreSQL",b:["6-stage LLM pipeline with schema-validated outputs, tested on 3 labelled cases.","FastAPI backend that drops invented skills, with rate limiting, retries and caching for free-tier APIs.","5-page React dashboard (radar, donut and per-skill charts) deployed on Vercel, Render and Neon PostgreSQL."],
+l:[["Live demo","https://career-gap-analyzer-kohl.vercel.app/"],["GitHub","https://github.com/kav-26/Career-Gap-Analyzer"]]},
+{n:"03",big:"8+ locations",m:"of live crowd density on an interactive Hyderabad map",t:"Crowd Guardian",d:"A real-time crowd monitoring platform where signed-in users can report what they see, and the map updates for everyone.",
+s:"Node.js,Express.js,MongoDB Atlas,JWT,Chart.js,Leaflet.js",b:["Node.js / Express REST APIs on MongoDB Atlas with JWT authentication.","Community reporting refreshes map markers and dashboard data.","Frontend on Vercel and backend on Render, with CORS and environment variables set up for production."],
+l:[["Live demo","https://crowd-guardian-six.vercel.app/"],["GitHub","https://github.com/kav-26/crowd-guardian"]]},
+{n:"04",big:"XGBoost",m:"risk model served through a REST API",t:"Accident Hotspot Prediction System",d:"Predicts accident risk from road and weather conditions and keeps a history of every prediction.",
+s:"Python,XGBoost,Node.js,Express.js,MongoDB,Chart.js",b:["Model trained after data preprocessing and feature preparation.","Node.js / Express API serves predictions to a full-stack app and stores history in MongoDB.","Chart.js views for risk distribution, weather, road types and risk triggers."],
+l:[["GitHub","https://github.com/kav-26/Accident-Hotspot-Prediction-System-"]]}];
+$("#ft").innerHTML=F.map(function(p){return '<article class="feat rv"><div class="met"><small>'+p.n+' · FULL-STACK</small><div><div class="big">'+p.big+'</div><p>'+p.m+'</p></div></div><div class="bd"><h3>'+p.t+'</h3><p>'+p.d+'</p>'+chips(p.s)+det(p.b)+lks(p.l)+'</div></article>'}).join("");
+
+/* more work */
+var M=[
+{k:"6 agents",t:"Fin-Trace — AI Financial Investigation Engine",d:"A team of AI agents that works out why a company’s financials changed, with cited reports from 10-K filings.",s:"Python,LangGraph,FAISS,FastAPI,Pandas",b:["RAG pipeline (PDF → chunking → embeddings → FAISS) with a Contradiction Detection agent.","A Pandas-based analyst agent caught and corrected a real numeric discrepancy.","Causal knowledge graphs; validated on Microsoft and Tesla."],l:[["GitHub","https://github.com/kav-26/fin-trace"]]},
+{k:"15+ tests",t:"Student Performance Dashboard",d:"Flags at-risk students early from attendance, study hours, LMS use and marks.",s:"Python,Streamlit,Pandas,Plotly,JWT,bcrypt",b:["~500 student records analyzed with outlier detection and correlation analysis.","8 modules with Low / Medium / High risk classification and drill-downs.","2 user roles, bcrypt, JWT, brute-force protection and session timeout."],l:[["Live demo","https://kav-26-student-performance-dashboard-app-ghfwnu.streamlit.app/"],["GitHub","https://github.com/kav-26/Student-Performance-Dashboard"]]},
+{k:"~0.92 ROC-AUC",t:"Bank Term Deposit Analysis",d:"Finds which customers subscribe to term deposits across 45K+ bank records, with a what-if campaign simulator.",s:"Python,Pandas,NumPy,Seaborn,Scikit-learn,Streamlit",b:["Cleaned data and built features on 45K+ records.","Compared three models and tuned a Random Forest with GridSearchCV.","Streamlit dashboard with a What-if Campaign Simulator."],l:[["GitHub","https://github.com/kav-26/bank-subscription-prediction-dashboard"]]},
+{k:"Research",t:"Woxsenite — Blockchain Academic Rewards",d:"A reward system for student participation on Ethereum, with AI-assisted certificate checks.",s:"Python,Flask,Web3.py,Ganache,EasyOCR,RapidFuzz",b:["Smart contracts validate participation and distribute tokens.","EasyOCR reads certificates and RapidFuzz matches the details."],l:[]}];
+$("#mg").innerHTML=M.map(function(p){return '<article class="card rv"><div class="k">'+p.k+'</div><h3>'+p.t+'</h3><p>'+p.d+'</p>'+chips(p.s)+det(p.b)+lks(p.l)+'</article>'}).join("");
+
+/* skills */
+var S={"Backend":"Python,FastAPI,Flask,Node.js,Express.js,REST APIs,JWT,Pydantic,SQLAlchemy","AI / ML":"Scikit-learn,XGBoost,Pandas,NumPy,LangGraph,FAISS,RAG,Gemini API","Data":"SQL,PostgreSQL,SQLite,MongoDB,Matplotlib,Seaborn,Plotly,Streamlit","Frontend & Tools":"React,JavaScript,HTML,CSS,Tailwind CSS,Git,Docker,Postman,Vercel,Render"};
+$("#sg").innerHTML=Object.keys(S).map(function(k){return '<div class="box rv"><h3>'+k+'</h3>'+chips(S[k])+'</div>'}).join("");
+
+/* reveal, progress, active nav */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll(".rv").forEach(function(e){io.observe(e)});
+var links=document.querySelectorAll("#nav a"),secs=["projects","more","skills","about","contact"].map(function(i){return document.getElementById(i)});
+function sc(){var h=document.documentElement;$("#bar").style.width=(scrollY/Math.max(h.scrollHeight-innerHeight,1)*100)+"%";var a=-1;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<innerHeight*.4)a=i});links.forEach(function(l,i){l.classList.toggle("on",i===a)})}
+addEventListener("scroll",sc,{passive:true});sc();
+</script>
+</body>
+</html>
